@@ -1,0 +1,5 @@
+﻿rasa==3.6.5
+requests
+openai
+python-dotenv
+supabase
