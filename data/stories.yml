@@ -1,0 +1,12 @@
+version: "3.1"
+
+stories:
+  - story: get phase flow
+    steps:
+      - intent: get_phase
+      - action: action_get_phase
+
+  - story: ask doubt flow
+    steps:
+      - intent: ask_doubt
+      - action: action_ask_doubt
