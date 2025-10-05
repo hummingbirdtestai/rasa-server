@@ -1,0 +1,14 @@
+﻿services:
+  - type: web
+    name: rasa-hummingbird
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && rasa train
+    startCommand: rasa run --enable-api --cors "*" --port 10000 --actions actions
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
