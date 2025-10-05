@@ -1,7 +1,8 @@
 ﻿rasa==3.6.5
-python-3.10.14
+python==3.10.14
 requests
 openai
 python-dotenv
 supabase
+
 
