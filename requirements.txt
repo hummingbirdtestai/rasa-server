@@ -1,8 +1,5 @@
-﻿rasa==3.6.5
-python==3.10.14
+rasa==3.6.5
 requests
 openai
 python-dotenv
 supabase
-
-
