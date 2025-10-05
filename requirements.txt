@@ -2,7 +2,7 @@
 rasa==3.6.5
 
 # --- Dependency fix for randomname conflict ---
-randomname==0.1.5.post1
+randomname==0.1.5
 
 # --- Prevent setuptools crash on Render ---
 setuptools==68.0.0
