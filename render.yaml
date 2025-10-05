@@ -3,8 +3,14 @@ services:
     name: rasa-hummingbird
     env: python
     plan: free
+
     buildCommand: pip install -r requirements.txt && rasa train
-    startCommand: rasa run --enable-api --cors "*" --port 10000 --actions actions
+
+    # Run both servers inside one container
+    startCommand: |
+      rasa run --enable-api --cors "*" --port 10000 &
+      rasa run actions
+
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.12
