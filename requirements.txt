@@ -1,7 +1,15 @@
+# --- Core Rasa engine ---
 rasa==3.6.5
-randomname==0.1.4
+
+# --- Dependency fix for randomname conflict ---
+randomname==0.1.5.post1
+
+# --- Prevent setuptools crash on Render ---
+setuptools==68.0.0
+wheel
+
+# --- Your integrations ---
 requests
 openai
 python-dotenv
 supabase
-
