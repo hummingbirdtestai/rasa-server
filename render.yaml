@@ -1,14 +1,16 @@
 services:
   - type: web
     name: rasa-hummingbird
-    env: docker
+    env: python
     plan: free
-    dockerfilePath: rasa-server/Dockerfile
+    buildCommand: pip install -r requirements.txt && rasa train
+    startCommand: rasa run --enable-api --cors "*" --port 10000 --actions actions
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_KEY
         sync: false
       - key: OPENAI_API_KEY
         sync: false
-
