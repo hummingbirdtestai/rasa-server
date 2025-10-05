@@ -1,15 +1,9 @@
 services:
   - type: web
     name: rasa-hummingbird
-    env: python
+    env: docker
     plan: free
-    buildCommand: |
-      apt-get update && apt-get install -y python3.10 python3.10-venv python3.10-distutils
-      curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
-      python3.10 -m pip install --upgrade pip
-      python3.10 -m pip install -r requirements.txt
-      python3.10 -m rasa train
-    startCommand: python3.10 -m rasa run --enable-api --cors "*" --port 10000 --actions actions
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: SUPABASE_URL
         sync: false
